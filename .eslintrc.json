@@ -1,0 +1,30 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb", 
+        "prettier",
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "prettier",
+        "react"
+    ],
+    "rules": {
+        "prettier/prettier": "error", //enforces prettier rules
+        "no-unused-vars": "warn",
+        "import/no-unresolved": "warn",
+        "no-console": "off", //allows use of console logs
+        "func-names": "off", //allows to use the word function before a function
+        "spaced-comment": "off" //allows you to comment without having to add space in front of slashes
+    }
+}
