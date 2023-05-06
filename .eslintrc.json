@@ -25,6 +25,7 @@
         "import/no-unresolved": "warn",
         "no-console": "off", //allows use of console logs
         "func-names": "off", //allows to use the word function before a function
-        "spaced-comment": "off" //allows you to comment without having to add space in front of slashes
+        "spaced-comment": "off", //allows you to comment without having to add space in front of slashes
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
     }
 }
