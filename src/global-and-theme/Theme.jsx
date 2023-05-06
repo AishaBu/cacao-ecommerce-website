@@ -7,11 +7,17 @@ const theme = {
     backgroundColor: '#fcf8ed',
     hamburgerMenulines: 'rgba(44, 21, 12, 0.6)',
     hamburgerMenuBackground: 'rgba(185, 169, 104, .25)',
+    navigationSidebarBackground: 'rgba(185, 169, 104, .40)',
+    closeButtonBackground: 'rgba(185, 169, 104, .60)',
   },
 
   shadow: {
     bannerBoxShadow: '0px 3px 4px rgba(0, 0, 0, 0.2)',
     defaultBoxShadow: '0px 3px 4px rgba(0, 0, 0, 0.25)',
+  },
+
+  fonts: {
+    publicSans: 'Public Sans, sans-serif',
   },
 };
 
