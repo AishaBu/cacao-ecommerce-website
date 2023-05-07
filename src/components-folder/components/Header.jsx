@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { FiShoppingCart } from 'react-icons/fi';
 import { MdClose } from 'react-icons/md';
 
 function Header() {
@@ -41,7 +41,7 @@ function Header() {
 
           {/*Shopping Cart*/}
           <div className="shopping-cart">
-            <AiOutlineShoppingCart />
+            <FiShoppingCart />
           </div>
         </div>
 
@@ -152,7 +152,10 @@ const HeaderStyled = styled.header`
 
   //Shopping Cart
   .shopping-cart {
-    font-size: 35px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
   }
 
