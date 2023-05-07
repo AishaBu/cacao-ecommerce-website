@@ -114,7 +114,8 @@ const HeaderStyled = styled.header`
 
   //Hamburger Menu
   .hamburger-menu {
-    background-color: ${({ theme }) => theme.colors.hamburgerMenuBackground};
+    background-color: ${({ theme }) =>
+      theme.colors.twentyFiveOpacityDarkKhakiBackground};
     width: 50px;
     height: 40px;
     display: flex;
@@ -158,9 +159,12 @@ const HeaderStyled = styled.header`
   //Navigation SideBar Panel
   nav {
     background-color: ${({ theme }) =>
-      theme.colors.navigationSidebarBackground};
+      theme.colors.fortyOpacityDarkKhakiBackground};
     width: 268px;
-    height: 650px;
+    height: auto;
+    position: fixed;
+    z-index: 1; //Puts header above everything
+
     //Aligns content inside of nav menue
     display: flex;
     flex-direction: column;
@@ -215,6 +219,63 @@ const HeaderStyled = styled.header`
   //Close Button Hover
   .close-button:hover {
     background-color: ${({ theme }) => theme.colors.darkKhaki};
+  }
+
+  //MEDIA QUERIES
+  //499px and below
+  @media (max-width: 335px) {
+    .header-banner {
+      gap: 20px;
+    }
+  }
+
+  //300px and below
+  @media (max-width: 300px) {
+    .header-banner {
+      gap: 10px;
+    }
+  }
+
+  //500px and above
+  @media (min-width: 500px) {
+    .header-banner {
+      gap: 100px;
+    }
+  }
+
+  //700px and above
+  @media (min-width: 700px) {
+    .header-banner {
+      gap: 180px;
+    }
+  }
+
+  //1100px and above
+  @media (min-width: 1100px) {
+    .header-banner {
+      gap: 30px;
+    }
+  }
+
+  //1300px and above
+  @media (min-width: 1300px) {
+    .header-banner {
+      gap: 130px;
+    }
+  }
+
+  //1400px and above
+  @media (min-width: 1400px) {
+    .header-banner {
+      gap: 200px;
+    }
+  }
+
+  //1600px and above
+  @media (min-width: 1600px) {
+    .header-banner {
+      gap: 500px;
+    }
   }
 `;
 

@@ -6,8 +6,8 @@ const theme = {
     zinnwalditeBrown: '#2C150C',
     backgroundColor: '#fcf8ed',
     hamburgerMenulines: 'rgba(44, 21, 12, 0.6)',
-    hamburgerMenuBackground: 'rgba(185, 169, 104, .25)',
-    navigationSidebarBackground: 'rgba(185, 169, 104, .40)',
+    twentyFiveOpacityDarkKhakiBackground: 'rgba(185, 169, 104, .25)',
+    fortyOpacityDarkKhakiBackground: 'rgba(185, 169, 104, .40)',
     closeButtonBackground: 'rgba(185, 169, 104, .60)',
   },
 
