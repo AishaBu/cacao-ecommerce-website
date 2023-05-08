@@ -21,6 +21,5 @@ const ContentStyled = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    z-index: 2;
   }
 `;

@@ -11,10 +11,12 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
+
 body{
   /*Set Color*/
   background-color: ${({ theme }) => theme.colors.backgroundColor};
 }
+
 
 `;
 //Export Styles

@@ -110,6 +110,10 @@ const HeaderStyled = styled.header`
     justify-content: space-evenly;
     align-items: center;
     gap: 60px;
+
+    //Add z-index to header and position for it to work
+    position: fixed;
+    z-index: 1;
   }
 
   //Hamburger Menu
@@ -166,6 +170,7 @@ const HeaderStyled = styled.header`
     width: 268px;
     height: auto;
     position: fixed;
+    top: 54px;
     z-index: 1; //Puts header above everything
 
     //Aligns content inside of nav menue

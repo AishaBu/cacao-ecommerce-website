@@ -60,9 +60,10 @@ const FooterStyled = styled.footer`
     height: auto;
 
     //Keep Footer At Bottom
-    position: fixed;
-    bottom: 0;
+    padding: 10px;
     text-align: center;
+    position: sticky;
+    bottom: 0;
   }
 
   //Footer Navigation Links Anchor Tag
