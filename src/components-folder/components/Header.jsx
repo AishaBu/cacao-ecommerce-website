@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FiShoppingCart } from 'react-icons/fi';
 import { MdClose } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 function Header() {
   function displayNavMenu() {
@@ -34,7 +35,7 @@ function Header() {
 
           {/*Logo*/}
           <img
-            src="./src/assets/logo/cacao-logo-png.png"
+            src="/src/assets/logo/cacao-logo-png.png"
             alt="Cacao Logo"
             className="cacao-logo"
           />
@@ -58,39 +59,42 @@ function Header() {
           </button>
 
           {/*Home Page*/}
-          <a href="#top" className="anchor-banner">
+          <Link to="/" className="anchor-banner">
             Home
-          </a>
+          </Link>
 
           {/*Origins of Cacao*/}
-          <a href="#top" className="anchor-banner">
+          <Link to="/pages/cacaoorigins" className="anchor-banner">
             Origins of Cacao
-          </a>
+          </Link>
 
           {/*Processing Cacao*/}
-          <a href="#top" className="anchor-banner">
+          <Link to="/pages/processing" className="anchor-banner">
             Processing Cacao
-          </a>
+          </Link>
 
-          {/*Product Page*/}
+          {/*Product Page*
           <a href="#top" className="anchor-banner">
             Concept Products
           </a>
 
-          {/*Support Real Businesses*/}
+          {/*Support Real Businesses*/
+          /*}
           <a href="#top" className="anchor-banner">
             Support Real Businesses
           </a>
 
-          {/*About Page*/}
+          {/*About Page*/
+          /*}
           <a href="#top" className="anchor-banner">
             About
           </a>
 
-          {/*Contact Us Page*/}
+          {/*Contact Us Page*/
+          /*}
           <a href="#top" className="anchor-banner">
             Contact Us
-          </a>
+          </a> */}
         </nav>
       </header>
     </HeaderStyled>
@@ -113,6 +117,7 @@ const HeaderStyled = styled.header`
 
     //Add z-index to header and position for it to work
     position: fixed;
+    top: 0;
     z-index: 1;
   }
 

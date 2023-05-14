@@ -1,12 +1,12 @@
-import React from 'react';
+/*import React from 'react';
 import styled from 'styled-components';
-import Homepage from './Pages/Homepage';
+import Home from './pages/home';
 
 function Content() {
   return (
     <ContentStyled>
       <div className="content">
-        <Homepage />
+        <Home />
       </div>
     </ContentStyled>
   );
@@ -23,3 +23,4 @@ const ContentStyled = styled.div`
     align-items: center;
   }
 `;
+*/

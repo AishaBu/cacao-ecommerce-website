@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -9,19 +10,19 @@ function Footer() {
           {/*Footer Side Bar Menu*/}
           <nav className="footer-nav-links">
             {/*Home Page*/}
-            <a href="#top" className="anchor-banner">
+            <Link to="/" className="anchor-banner">
               Home
-            </a>
+            </Link>
 
             {/*Origins of Cacao*/}
-            <a href="#top" className="anchor-banner">
+            <Link to="/pages/cacaoorigins" className="anchor-banner">
               Origins of Cacao
-            </a>
+            </Link>
 
             {/*Processing Cacao*/}
-            <a href="#top" className="anchor-banner">
+            <Link to="/pages/processing" className="anchor-banner">
               Processing Cacao
-            </a>
+            </Link>
 
             {/*Product Page*/}
             <a href="#top" className="anchor-banner">

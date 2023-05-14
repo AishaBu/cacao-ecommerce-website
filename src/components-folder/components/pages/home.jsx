@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Homepage() {
+function Home() {
   return (
-    <HomepageStyled>
+    <HomeStyled>
       <div className="homepage-content">
         {/*Section One*/}
         <section className="section-one">
           <div className="container">
             <div className="image-container">
               <img
-                src="./src/assets/images/cacoa-tree-1.jpg"
+                src="/src/assets/images/cacoa-tree-1.jpg"
                 alt="cacao tree illustration"
                 className="section-image"
               />
@@ -45,7 +45,7 @@ function Homepage() {
           <div className="container">
             <div className="image-container">
               <img
-                src="./src/assets/images/cacao-pods-png.png"
+                src="/src/assets/images/cacao-pods-png.png"
                 alt="cacao pods illustration"
                 className="section-image"
               />
@@ -74,7 +74,7 @@ function Homepage() {
           <div className="container">
             <div className="image-container">
               <img
-                src="./src/assets/images/final-cacao-varieties-image-png.png"
+                src="/src/assets/images/final-cacao-varieties-image-png.png"
                 alt="top cacao bean varieites illustration"
                 className="section-image"
               />
@@ -106,7 +106,7 @@ function Homepage() {
           <div className="container">
             <div className="image-container">
               <img
-                src="./src/assets/images/final-top-varieties-png.png"
+                src="/src/assets/images/final-top-varieties-png.png"
                 alt="top cacao bean varieties illustration"
                 className="section-image"
               />
@@ -135,14 +135,14 @@ function Homepage() {
           </div>
         </section>
       </div>
-    </HomepageStyled>
+    </HomeStyled>
   );
 }
 
-export default Homepage;
+export default Home;
 
 //Styled Footer Components
-const HomepageStyled = styled.div`
+const HomeStyled = styled.div`
   .container {
     display: flex;
     justify-content: center;
