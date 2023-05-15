@@ -4,9 +4,9 @@ import styled from 'styled-components';
 function Home() {
   return (
     <HomeStyled>
-      <div className="homepage-content">
+      <div className="homepage-content" id="allSlides">
         {/*Section One*/}
-        <section className="section-one">
+        <section id="section-one" className="slides">
           <div className="container">
             <div className="image-container">
               <img
@@ -41,7 +41,7 @@ function Home() {
         </section>
 
         {/*Section Two*/}
-        <section className="section-two">
+        <section id="section-two" className="slides">
           <div className="container">
             <div className="image-container">
               <img
@@ -70,7 +70,7 @@ function Home() {
         </section>
 
         {/*Section Three*/}
-        <section className="section-three">
+        <section id="section-three" className="slides">
           <div className="container">
             <div className="image-container">
               <img
@@ -102,7 +102,7 @@ function Home() {
         </section>
 
         {/*Section Four*/}
-        <section className="section-four">
+        <section id="section-four" className="slides">
           <div className="container">
             <div className="image-container">
               <img
@@ -134,6 +134,22 @@ function Home() {
             </section>
           </div>
         </section>
+
+        {/*Next and previous buttons */}
+        <button type="button" className="prev">
+          &#10094;
+        </button>
+        <button type="button" className="next">
+          &#10095;
+        </button>
+
+        {/*DOTS*/}
+        <div className="dots">
+          <span className="dot" />
+          <span className="dot" />
+          <span className="dot" />
+          <span className="dot" />
+        </div>
       </div>
     </HomeStyled>
   );
@@ -151,7 +167,7 @@ const HomeStyled = styled.div`
     margin-top: 40px;
   }
 
-  .section-one {
+  #section-one {
     margin-top: 80px;
   }
 
@@ -205,6 +221,13 @@ const HomeStyled = styled.div`
     font-size: 16px;
     line-height: 20px;
     width: 350px;
+  }
+
+  /* The dots/bullets/indicators */
+  .dots,
+  .prev,
+  .next {
+    display: none;
   }
 
   //MEDIA QUERIES
@@ -364,11 +387,17 @@ const HomeStyled = styled.div`
 
   //1000px and above
   @media (min-width: 1000px) {
+    #section-one {
+      margin-top: 40px;
+    }
+
     .homepage-content {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
+      vertical-align: center;
+      gap: 60px;
     }
 
     .container {
@@ -376,9 +405,10 @@ const HomeStyled = styled.div`
       justify-content: center;
       align-items: flex-start;
       flex-direction: row;
-      margin-top: 80px;
-      margin-bottom: 30px;
       gap: 80px;
+      padding: 50px;
+      border-radius: 20px;
+      background-color: rgba(185, 169, 104, 0.25);
     }
 
     .citation {
@@ -407,6 +437,66 @@ const HomeStyled = styled.div`
     .section-image {
       width: 360px;
       height: 460px;
+    }
+
+    //SlideShow
+    #allSlides {
+      display: flex;
+      flex-direction: column;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+    }
+
+    #section-two,
+    #section-three,
+    #section-four {
+      display: none;
+    }
+
+    //Show prev, next, and dots
+    .dots,
+    .prev,
+    .next {
+      display: block;
+    }
+
+    /* The dots/bullets/indicators */
+    .dots {
+      position: relative;
+      top: -20px;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    //Previous and Next Buttons
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      background-color: transparent;
+      font-size: 25px;
+    }
+
+    .prev {
+      left: 18px;
+    }
+
+    .next {
+      right: 18px;
     }
   }
 `;
