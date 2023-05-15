@@ -15,7 +15,7 @@ function Home() {
                 className="section-image"
               />
               {/*Citation*/}
-              <div className="citation">
+              <div className="citation" id="shorter-citation">
                 <cite>Theobroma cacao (Theobroma grandiflorum)</cite>
                 <p>Image sourced via Flickr</p>
               </div>
@@ -50,7 +50,7 @@ function Home() {
                 className="section-image"
               />
               {/*Citation*/}
-              <div className="citation">
+              <div className="citation" id="shorter-citation">
                 <cite>Theobroma cacao (Theobroma grandiflorum)</cite>
                 <p>Image sourced via Flickr</p>
               </div>
@@ -81,7 +81,7 @@ function Home() {
               {/*Citation*/}
               <div className="citation" id="longer-citation">
                 <cite>Theobroma cacao (Theobroma grandiflorum)</cite>
-                <p>
+                <p className="longer-citation-par">
                   Created with Affinity Photo, Images Sourced via Bar and Cacao
                 </p>
               </div>
@@ -113,7 +113,7 @@ function Home() {
               {/*Citation*/}
               <div className="citation" id="longer-citation">
                 <cite>Theobroma cacao (Theobroma grandiflorum)</cite>
-                <p>
+                <p className="longer-citation-par">
                   Created with Affinity Photo, Images Sourced via Bar and Cacao
                 </p>
               </div>
@@ -176,18 +176,23 @@ const HomeStyled = styled.div`
     font-size: 8px;
     display: flex;
     justify-content: center;
+    flex-direction: row;
     margin-top: 5px;
     margin-left: 10px;
     font-style: italic;
-    gap: 5px;
-    display: flex;
-    flex-direction: column;
+  }
+
+  #shorter-citation {
+    gap: 120px;
+  }
+
+  #longer-citation {
+    gap: 50px;
   }
 
   .section-paragraph {
     color: ${({ theme }) => theme.colors.zinnwalditeBrown};
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 20px auto;
   }
 
   .section-paragraph h1 {
@@ -203,6 +208,20 @@ const HomeStyled = styled.div`
   }
 
   //MEDIA QUERIES
+  //990px and below
+  @media (max-width: 999px) {
+    .longer-citation-par {
+      width: 160px;
+    }
+  }
+
+  //600px and below
+  @media (max-width: 600px) {
+    .longer-citation-par {
+      width: 120px;
+    }
+  }
+
   //412px and below
   @media (max-width: 412px) {
     //Cacao Tree Section
@@ -214,6 +233,10 @@ const HomeStyled = styled.div`
     .section-paragraph {
       margin-top: 20px;
       margin-bottom: 10px;
+    }
+
+    #shorter-citation {
+      gap: 100px;
     }
   }
 
@@ -233,6 +256,14 @@ const HomeStyled = styled.div`
     .section-paragraph p {
       font-size: 15px;
       width: 310px;
+    }
+
+    .longer-citation {
+      gap: 60px;
+    }
+
+    #shorter-citation {
+      gap: 80px;
     }
   }
 
@@ -291,6 +322,14 @@ const HomeStyled = styled.div`
       font-size: 15px;
       width: 250px;
     }
+
+    #shorter-citation {
+      gap: 10px;
+    }
+
+    #longer-citation {
+      gap: 8px;
+    }
   }
 
   //260px and below
@@ -312,8 +351,26 @@ const HomeStyled = styled.div`
     }
   }
 
+  //308px and below
+  @media (max-width: 308px) {
+    #shorter-citation {
+      gap: 40px;
+    }
+
+    #longer-citation {
+      gap: 10px;
+    }
+  }
+
   //1000px and above
   @media (min-width: 1000px) {
+    .homepage-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     .container {
       display: flex;
       justify-content: center;
@@ -325,13 +382,16 @@ const HomeStyled = styled.div`
     }
 
     .citation {
-      gap: 130px;
       display: flex;
       flex-direction: row;
     }
 
     #longer-citation {
       gap: 10px;
+    }
+
+    .longer-citation-par {
+      width: 200px;
     }
 
     .section-paragraph h1 {

@@ -4,8 +4,8 @@ import styled from 'styled-components';
 export function ProcessingCacao() {
   return (
     <ProcessingStyled>
-      <div className="cacao">
-        <h1>ProcessingCacao</h1>
+      <div className="processing">
+        <h1>Processing Cacao</h1>
       </div>
     </ProcessingStyled>
   );
@@ -14,15 +14,17 @@ export function ProcessingCacao() {
 export default ProcessingCacao;
 
 const ProcessingStyled = styled.div`
-  .cacao {
+  .processing {
     background-color: blue;
     height: 100vh;
     text-align: center;
     text-transform: uppercase;
-    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  p {
+  h1 {
     color: black;
   }
 `;
