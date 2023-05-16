@@ -28,8 +28,8 @@ function Home() {
               </h1>
               <p>
                 The <i>Theobroma cacao</i> tree (cacao tree or cocoa tree) is a
-                small (20-39 ft tall (6-12m)) evergreen tree in the family
-                <i> Malvaceae</i> (mallows) that weighs about one pound(500 g)
+                small(20-39 ft tall(6-12m)) evergreen tree in the family
+                <i> Malvaceae</i> (mallows) that weighs about one pound(500g)
                 when ripe. The cacao tree has light pink and white five-pointed
                 small flowers that grow in clusters right on top of its trunk.
                 When these flowers are pollinated, fruits that are ovoid and
@@ -134,22 +134,34 @@ function Home() {
             </section>
           </div>
         </section>
+      </div>
 
-        {/*Next and previous buttons */}
-        <button type="button" className="prev">
-          &#10094;
-        </button>
-        <button type="button" className="next">
-          &#10095;
-        </button>
-
-        {/*DOTS*/}
-        <div className="dots">
+      {/*DOTS*/}
+      <div className="dots">
+        <a href="#section-one">
           <span className="dot" />
+          <p className="dot-par">
+            <i>Theobroma cacao </i>
+          </p>
+        </a>
+        <a href="#section-two">
           <span className="dot" />
+          <p className="dot-par">
+            <i>Cacao Pod</i>
+          </p>
+        </a>
+        <a href="#section-three">
           <span className="dot" />
+          <p className="dot-par">
+            <i>Cacao Bean Varieties </i>
+          </p>
+        </a>
+        <a href="#section-four">
           <span className="dot" />
-        </div>
+          <p className="dot-par">
+            <i>Popular Varieties </i>
+          </p>
+        </a>
       </div>
     </HomeStyled>
   );
@@ -224,9 +236,7 @@ const HomeStyled = styled.div`
   }
 
   /* The dots/bullets/indicators */
-  .dots,
-  .prev,
-  .next {
+  .dots {
     display: none;
   }
 
@@ -393,11 +403,11 @@ const HomeStyled = styled.div`
 
     .homepage-content {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       vertical-align: center;
-      gap: 60px;
+      gap: 0px;
     }
 
     .container {
@@ -409,6 +419,7 @@ const HomeStyled = styled.div`
       padding: 50px;
       border-radius: 20px;
       background-color: rgba(185, 169, 104, 0.25);
+      margin-bottom: 30px;
     }
 
     .citation {
@@ -430,7 +441,7 @@ const HomeStyled = styled.div`
 
     .section-paragraph p {
       font-size: 18px;
-      line-height: 30px;
+      line-height: 50px;
       width: 430px;
     }
 
@@ -439,64 +450,118 @@ const HomeStyled = styled.div`
       height: 460px;
     }
 
-    //SlideShow
-    #allSlides {
-      display: flex;
-      flex-direction: column;
-      overflow-x: scroll;
-      scroll-behavior: smooth;
-    }
-
-    #section-two,
-    #section-three,
-    #section-four {
-      display: none;
-    }
-
     //Show prev, next, and dots
-    .dots,
-    .prev,
-    .next {
+    .dots {
       display: block;
     }
 
     /* The dots/bullets/indicators */
-    .dots {
-      position: relative;
-      top: -20px;
-    }
-
     .dot {
       cursor: pointer;
       height: 15px;
       width: 15px;
-      margin: 0 2px;
+      margin: 0 2px 8px;
       background-color: #bbb;
       border-radius: 50%;
       display: inline-block;
       transition: background-color 0.6s ease;
     }
 
+    .dots {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 90px;
+      right: 20px;
+    }
+
+    //Set Dot Hover
     .active,
     .dot:hover {
-      background-color: #717171;
+      background-color: ${({ theme }) => theme.colors.crayolaGold};
     }
 
-    //Previous and Next Buttons
-    .prev,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      background-color: transparent;
-      font-size: 25px;
+    //Hide Dot Pars
+    .dot-par {
+      display: none;
+    }
+  }
+  //1170px and above
+  @media (min-width: 1170px) {
+    .dots {
+      right: 50px;
+    }
+  }
+
+  //1260px and above
+  @media (min-width: 1260px) {
+    .dots {
+      right: 80px;
+    }
+  }
+
+  //1300px and above
+  @media (min-width: 1300px) {
+    .dots {
+      right: 40px;
     }
 
-    .prev {
-      left: 18px;
+    .dot-par {
+      display: inline;
+      font-size: 10px;
     }
 
-    .next {
-      right: 18px;
+    //Remove underline in anchor text
+    .dots a {
+      text-decoration: none;
+      color: black;
+      font-family: ${({ theme }) => theme.fonts.publicSans};
+    }
+
+    //Aligns dots and pars vertically
+    .dot,
+    .dot-par {
+      vertical-align: middle;
+    }
+
+    //Adjust margin space between dots
+    .dot {
+      margin: 0 2px 10px;
+    }
+  }
+
+  //1450px and above
+  @media (min-width: 1450px) {
+    .dots {
+      right: 80px;
+    }
+  }
+
+  //1600px and above
+  @media (min-width: 1600px) {
+    .dots {
+      right: 120px;
+    }
+  }
+
+  //1700px and above
+  @media (min-width: 1700px) {
+    .dots {
+      right: 180px;
+    }
+  }
+
+  //1800px and above
+  @media (min-width: 1800px) {
+    .dots {
+      right: 230px;
+    }
+  }
+
+  //1900px and above
+  @media (min-width: 1900px) {
+    .dots {
+      right: 260px;
     }
   }
 `;
