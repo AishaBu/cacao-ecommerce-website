@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 
 function Home() {
+  //useRef Declarations
+  const scrollSectionOne = useRef(null);
+  const scrollSectionTwo = useRef(null);
+  const scrollSectionThree = useRef(null);
+  const scrollSectionFour = useRef(null);
+  const sectionDot = useRef(null);
+
+  //Scroll To View Function
+  function sectionScroll(section) {
+    //Change section dot color on click
+    sectionDot.current.style.backgroundColor = 'rgb(228, 198, 127)';
+
+    section.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
   return (
     <HomeStyled>
       <div className="homepage-content" id="allSlides">
         {/*Section One*/}
-        <section id="section-one" className="slides">
+        <section id="section-one" className="slides" ref={scrollSectionOne}>
           <div className="container">
             <div className="image-container">
               <img
@@ -39,9 +56,8 @@ function Home() {
             </section>
           </div>
         </section>
-
         {/*Section Two*/}
-        <section id="section-two" className="slides">
+        <section id="section-two" className="slides" ref={scrollSectionTwo}>
           <div className="container">
             <div className="image-container">
               <img
@@ -68,9 +84,8 @@ function Home() {
             </section>
           </div>
         </section>
-
         {/*Section Three*/}
-        <section id="section-three" className="slides">
+        <section id="section-three" className="slides" ref={scrollSectionThree}>
           <div className="container">
             <div className="image-container">
               <img
@@ -100,9 +115,8 @@ function Home() {
             </section>
           </div>
         </section>
-
         {/*Section Four*/}
-        <section id="section-four" className="slides">
+        <section id="section-four" className="slides" ref={scrollSectionFour}>
           <div className="container">
             <div className="image-container">
               <img
@@ -138,30 +152,30 @@ function Home() {
 
       {/*DOTS*/}
       <div className="dots">
-        <a href="#section-one">
-          <span className="dot" />
+        <button type="button" onClick={() => sectionScroll(scrollSectionOne)}>
+          <span className="dot" ref={sectionDot} />
           <p className="dot-par">
             <i>Theobroma cacao </i>
           </p>
-        </a>
-        <a href="#section-two">
-          <span className="dot" />
+        </button>
+        <button type="button" onClick={() => sectionScroll(scrollSectionTwo)}>
+          <span className="dot" ref={sectionDot} />
           <p className="dot-par">
             <i>Cacao Pod</i>
           </p>
-        </a>
-        <a href="#section-three">
+        </button>
+        <button type="button" onClick={() => sectionScroll(scrollSectionThree)}>
           <span className="dot" />
           <p className="dot-par">
             <i>Cacao Bean Varieties </i>
           </p>
-        </a>
-        <a href="#section-four">
+        </button>
+        <button type="button" onClick={() => sectionScroll(scrollSectionFour)}>
           <span className="dot" />
           <p className="dot-par">
             <i>Popular Varieties </i>
           </p>
-        </a>
+        </button>
       </div>
     </HomeStyled>
   );
@@ -171,6 +185,11 @@ export default Home;
 
 //Styled Footer Components
 const HomeStyled = styled.div`
+  .four {
+    position: absolute;
+    top: 50px;
+    font-size: 40px;
+  }
   .container {
     display: flex;
     justify-content: center;
@@ -476,7 +495,6 @@ const HomeStyled = styled.div`
     }
 
     //Set Dot Hover
-    .active,
     .dot:hover {
       background-color: ${({ theme }) => theme.colors.crayolaGold};
     }
