@@ -7,18 +7,15 @@ function Home() {
   const scrollSectionTwo = useRef(null);
   const scrollSectionThree = useRef(null);
   const scrollSectionFour = useRef(null);
-  const sectionDot = useRef(null);
 
   //Scroll To View Function
   function sectionScroll(section) {
-    //Change section dot color on click
-    sectionDot.current.style.backgroundColor = 'rgb(228, 198, 127)';
-
     section.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
   }
+
   return (
     <HomeStyled>
       <div className="homepage-content" id="allSlides">
@@ -153,13 +150,13 @@ function Home() {
       {/*DOTS*/}
       <div className="dots">
         <button type="button" onClick={() => sectionScroll(scrollSectionOne)}>
-          <span className="dot" ref={sectionDot} />
+          <span className="dot" />
           <p className="dot-par">
             <i>Theobroma cacao </i>
           </p>
         </button>
         <button type="button" onClick={() => sectionScroll(scrollSectionTwo)}>
-          <span className="dot" ref={sectionDot} />
+          <span className="dot" />
           <p className="dot-par">
             <i>Cacao Pod</i>
           </p>
