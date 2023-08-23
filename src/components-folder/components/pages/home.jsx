@@ -12,7 +12,6 @@ function Home() {
   function sectionScroll(section) {
     section.current.scrollIntoView({
       behavior: 'smooth',
-      block: 'start',
     });
   }
 
@@ -476,10 +475,10 @@ const HomeStyled = styled.div`
       cursor: pointer;
       height: 15px;
       width: 15px;
-      margin: 0 2px 8px;
+      margin: 7px 5px 8px;
       background-color: #bbb;
       border-radius: 50%;
-      display: inline-block;
+      display: flex;
       transition: background-color 0.6s ease;
     }
 
@@ -499,6 +498,10 @@ const HomeStyled = styled.div`
     //Hide Dot Pars
     .dot-par {
       display: none;
+    }
+
+    button {
+      border-radius: 5%;
     }
   }
   //1170px and above
