@@ -500,6 +500,7 @@ const HomeStyled = styled.div`
       display: none;
     }
 
+    //Dot Buttons Background Border
     button {
       border-radius: 5%;
     }
@@ -521,7 +522,7 @@ const HomeStyled = styled.div`
   //1300px and above
   @media (min-width: 1300px) {
     .dots {
-      right: 40px;
+      right: 20px;
     }
 
     .dot-par {
@@ -540,11 +541,13 @@ const HomeStyled = styled.div`
     .dot,
     .dot-par {
       vertical-align: middle;
+      padding: 8px;
     }
 
     //Adjust margin space between dots
     .dot {
-      margin: 0 2px 10px;
+      margin: 5px 2px 10px;
+      display: inline-flex;
     }
   }
 
