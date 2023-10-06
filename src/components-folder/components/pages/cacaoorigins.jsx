@@ -3,17 +3,17 @@ import styled from 'styled-components';
 
 export function OriginsOfCacao() {
   return (
-    <CacaaoOriginsStyled>
+    <CacaoOriginsStyled>
       <div className="homepage-content">
         <h1 className="cacao">Origins of Cacao</h1>
       </div>
-    </CacaaoOriginsStyled>
+    </CacaoOriginsStyled>
   );
 }
 
 export default OriginsOfCacao;
 
-const CacaaoOriginsStyled = styled.div`
+const CacaoOriginsStyled = styled.div`
   .cacao {
     background-color: red;
     height: 100vh;
